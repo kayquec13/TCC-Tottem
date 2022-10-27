@@ -1,0 +1,179 @@
+html {
+  font-family: "PlusJakartaSans-ExtraBold", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.controls-container {
+  display: flex;
+  padding: 0.5rem;
+}
+
+.recorder-display {
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+}
+
+@keyframes animated-block {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.recording-indicator {
+  width: 10px;
+  height: 10px;
+  margin-right: 0.5rem;
+  border-radius: 50%;
+  background-color: #099fff;
+  margin-left: 5px;
+  animation-name: animated-block;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+.recording-time {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cancel-button-container {
+  display: grid;
+  place-content: center;
+  animation-name: animated-block;
+  animation-duration: 2s;
+}
+
+.start-button,
+.cancel-button {
+  border: none;
+  border-radius: 50%;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.cancel-button:hover {
+  color: #fd1c03;
+}
+
+.cancel-button {
+  margin-left: 7px;
+  margin-right: 10px;
+}
+
+.start-button-container {
+  display: grid;
+  place-content: center;
+}
+
+.start-button:hover {
+  color: #099fff;
+}
+
+.start-button {
+  margin-left: 10px;
+}
+
+.search-button {
+  border: none;
+  border-radius: 50%;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.search-button-container {
+  margin-left: 10px;
+  display: grid;
+  place-content: center;
+  animation-name: animated-block;
+  animation-duration: 2s;
+}
+
+.align-icon-card {
+  margin-top: 15;
+  margin-left: 10;
+}
+
+.card {
+  height: 250px;
+  width: 400px;
+  background-image: linear-gradient(rgba(25, 118, 210, 1), rgba(25, 118, 210, 0.5));
+  border-radius: 20px;
+  color: white;
+  margin: 20px;
+  margin-left: 50px;
+  font-size: 16px;
+  box-shadow: 2px 2px 20px #707070;
+}
+
+.top-block {
+  display: inline-block;
+  width: 400px;
+  height: 155px;
+}
+
+.bottom-block {
+  display: inline-block;
+  width: 400px;
+  height: 155px;
+}
+
+.card-chip {
+  float: left;
+  margin: 20px;
+}
+
+.card-name {
+  float: right;
+  margin: 20px;
+  position: relative;
+  top: 5px;
+  font-size: 30px;
+}
+
+.card-number {
+  margin: -45px 0 0 0;
+  text-align-last: center;
+}
+
+.due-date {
+  float: left;
+  margin: 20px;
+  position: relative;
+  margin-top: 45px;
+}
+
+.card-due-date {
+  font-weight: 700;
+}
+
+.d-block {
+  display: block;
+}
+
+.active-plan {
+  font-size: 1.2rem;
+  margin-left: 50px;
+}
+
+.start-button-home {
+  animation: animate 1.5s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.7;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
