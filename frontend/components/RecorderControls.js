@@ -31,7 +31,7 @@ export default function RecorderControls({ setData, fieldType, showRest = true }
 	}, [audio]);
 
 	return (
-		<div className="controls-container" style={!showRest && { justifyContent: 'center' }}>
+		<div className="controls-container" style={showRest ? { justifyContent: 'normal' } : { justifyContent: 'center', height: '120%', alignContent: 'center' }}>
 			{showRest ?
 				(!loading ?
 					<>
@@ -67,12 +67,12 @@ export default function RecorderControls({ setData, fieldType, showRest = true }
 							</div>
 						</div>
 					</>
-					: <></>
+					: <CircularProgress color={"inherit"} size={17} style={{ marginLeft: 12, marginTop: 4 }} />
 				) : 
-				<button className="start-button" style={showRest ? { marginRight: 10 } : { fontSize: 40 }} title="Gravar" onClick={startRecording}>
+				<button className={!initRecording ? "start-button-home-default" : "start-button-home"} style={showRest ? { marginRight: 10 } : { fontSize: 120 }} title="Gravar" onClick={!initRecording ? startRecording : saveRecording}>
 					<FontAwesomeIcon icon={faMicrophone} />
 				</button>
-			} : <CircularProgress color={"inherit"} size={17} style={{ marginLeft: 12, marginTop: 4 }} />
+			}
 		</div>
 	);
 }

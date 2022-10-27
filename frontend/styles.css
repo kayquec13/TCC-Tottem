@@ -161,7 +161,27 @@ html {
 }
 
 .start-button-home {
+  border: none;
+  border-radius: 50%;
+  background-color: #fff;
+  cursor: pointer;
   animation: animate 1.5s linear infinite;
+}
+
+.start-button-home-default {
+  border: none;
+  border-radius: 50%;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.start-button-home-default:hover {
+  color: #000;
+  cursor: pointer;
+}
+
+.start-button-home:hover {
+  color: #000 !important;
 }
 
 @keyframes animate {

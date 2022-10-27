@@ -11,7 +11,7 @@ export default function CustomerWelcome({ customer }) {
 
     useEffect(() => {
        if (value) {
-          if (value.toLowerCase().indexOf('cartão') > -1) {
+          if (value.toLowerCase().indexOf('cartão') > -1 || value.toLowerCase().indexOf('cartões') > -1) {
             Router.push({
                 pathname: `/home/${customerId}`,
                 query: { screen: 'cartao' }
@@ -19,7 +19,7 @@ export default function CustomerWelcome({ customer }) {
               undefined, { shallow: true }
               );
           }
-          if (value.toLowerCase().indexOf('novidades') > -1) {
+          if (value.toLowerCase().indexOf('novidades') > -1 || value.toLowerCase().indexOf('novidade') > -1) {
             Router.push({
                 pathname: `/home/${customerId}`,
                 query: { screen: 'novidades' }
@@ -27,7 +27,7 @@ export default function CustomerWelcome({ customer }) {
               undefined, { shallow: true }
               );
           }
-          if (value.toLowerCase().indexOf('ofertas') > -1) {
+          if (value.toLowerCase().indexOf('ofertas') > -1 || value.toLowerCase().indexOf('oferta') > -1) {
             Router.push({
                 pathname: `/home/${customerId}`,
                 query: { screen: 'ofertas' }
@@ -35,7 +35,7 @@ export default function CustomerWelcome({ customer }) {
               undefined, { shallow: true }
               );
           }
-          if (value.toLowerCase().indexOf('cadastro') > -1) {
+          if (value.toLowerCase().indexOf('cadastro') > -1 || value.toLowerCase().indexOf('cadastros') > -1) {
             Router.push({
                 pathname: `/home/${customerId}`,
                 query: { screen: 'cadastro' }
