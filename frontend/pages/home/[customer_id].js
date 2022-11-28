@@ -24,6 +24,7 @@ import LocalOfferOutlinedIcon from '@mui/icons-material/LocalOfferOutlined';
 import NewReleasesOutlinedIcon from '@mui/icons-material/NewReleasesOutlined';
 import Offers from '../../components/Offers';
 import News from '../../components/News';
+import LogoutIcon from '@mui/icons-material/Logout';
 
 const drawerWidth = 240;
 
@@ -52,8 +53,12 @@ const MENU_OPTIONS = [
         title: "Alterar Cadastro",
         icon: <SettingsIcon />,
         screen: <ChangeRegistration />
+    },
+    {
+        title: "Sair",
+        icon: <LogoutIcon />,
+        screen: 'logout'
     }
-
 ];
 
 const screenQuery = {
@@ -70,6 +75,18 @@ export default function Home() {
     const [customerId, setCustomerId] = useState(0);
     const [openAlert, setOpenAlert] = useState(false);
     const [alertMessage, setAlertMessage] = useState();
+
+    const changeScreen = (screen) => {
+       if (screen) {
+          if (screen == 'logout') {
+             router.push('/');
+          } else {
+            setScreen(screen);
+          }
+       } else {
+          setScreen(null);
+       }
+    }
 
     const getCustomer = async (customerId) => {
         try {
@@ -137,7 +154,7 @@ export default function Home() {
                 <Divider />
                 <List>
                     {MENU_OPTIONS.map((data, index) => (
-                        <ListItem button key={index} onClick={() => setScreen(data.screen)}>
+                        <ListItem button key={index} onClick={() => changeScreen(data.screen)}>
                             <ListItemIcon>
                                 {data.icon}
                             </ListItemIcon>
